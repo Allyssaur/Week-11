@@ -1,0 +1,68 @@
+/* Resets DOM */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Assigns a name to pull specified colors into code later with less code */
+:root {
+    --grey: 	#766584;
+    --winningCells: 	#cccdc9;
+}
+
+body {
+    color: var(--grey);
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1{
+    font-size: 125px;
+    text-transform: uppercase;
+}
+
+.container {
+    padding: 40px;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f4f1e7;
+}
+
+#gameGrid {
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.cell {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    color: var(--grey);
+    font-size: 120px;
+    border-right: 4px solid;
+    border-bottom: 4px solid;
+}
+/* ensures that the grid appears like an actual tictaktoe board (no lines on the edges) */
+.cell:nth-child(3n) {
+    border-right: none;
+}
+.cell:nth-child(6) ~ .cell {
+    border-bottom: none;
+}
+
+button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--grey);
+    color: #f0f4e7;
+    border-color: var(--grey);
+    font-size: 18px;
+    transition: 200mx transform;
+    font-weight: 600;
+}
